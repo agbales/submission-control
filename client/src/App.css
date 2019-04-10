@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto');
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 a {
@@ -30,12 +30,12 @@ a {
 }
 
 .btn, .btn-large, .btn:hover, .btn-large:hover {
-  line-height: 1px;
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
-  font-size: .8rem;
+  line-height: 1px !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 5px !important;
+  padding: 16px 20px !important;
+  margin-bottom: 20px !important;
+  font-size: .8rem !important;
 }
 
 .btn, .btn-large {
@@ -103,7 +103,7 @@ li {
 }
 
 .numbers {
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade', cursive !important;
   font-size: 2rem;
   margin-right: 10px;
   color: rgb(252, 91, 48);
@@ -120,7 +120,7 @@ li {
 }
 
 .overview-box {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .submission-count, .accepted {

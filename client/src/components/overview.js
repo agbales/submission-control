@@ -60,10 +60,12 @@ export default class PushcartPrizeRankings extends React.Component {
                         success rate
                     </div>
                 </div>
-
-                { !this.props.inspectingSimilar &&
-                    <AnnualStats annualStats={this.props.stats.years}/>
-                }
+                
+                <div className="container">
+                    { !this.props.inspectingSimilar &&
+                        <AnnualStats annualStats={this.props.stats.years}/>
+                    }
+                </div>
 
                 { this.state.showAcceptances 
                     ? (<div> 

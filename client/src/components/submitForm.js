@@ -29,11 +29,14 @@ export default class PushcartPrizeRankings extends React.Component {
                                 onChange={this.props.handleFile}
                                 ref={(ref) => { this.uploadInput = ref; }} 
                                 type="file"
-                                style={{fontSize: '1rem'}} />
+                                style={{fontSize: '1rem', border: 'none'}} />
                         </div>
                         <button className="btn btn-success" 
                                 type="submit"
-                                style={{marginTop: '20px' }}>Upload</button>
+                                style={{marginTop: '20px', 
+                                        backgroundColor: 'rgb(252, 91, 48)', 
+                                        color: '#f5f5f5', 
+                                        border: 'none'}}>Upload</button>
                     </form>
                     <p style={paragraphStyle}><span className="numbers">1</span> Download your submissions data from Submittable.</p>
                     <p style={paragraphStyle}><span className="numbers">2</span> Upload & enjoy!</p>

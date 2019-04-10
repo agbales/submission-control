@@ -105,7 +105,7 @@ class App extends Component {
                   />
                   { !this.state.inspectingSimilar 
                       ? <UniquePieces data={this.state.data}
-                                      toggleSimilar={this.toggleSimilar}
+                                      toggleSimilar={this.toggleSimilar}                                                
                         />
                       : <InspectSimilar toggleSimilar={this.toggleSimilar}
                                         similar={this.state.similar}
