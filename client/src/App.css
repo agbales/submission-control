@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.bigIcon {
+  height: 20vmin;
+  width: 20vmin;
+}
+
+.btn, .btn-large, .btn:hover, .btn-large:hover {
+  line-height: 1px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: .8rem;
+}
+
+.btn, .btn-large {
+  background-color: rgb(252, 91, 48);
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #FFA400
+
+}
+
+.green-checkmark {
+  color: #26A65B;
+}
+
+.flex-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-bottom: 40px;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+li {
+  text-align: left;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.list-title {
+  color: #1a1a1a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  /* width: 12vmin; */
+  width: 45vmin;
+  pointer-events: none;
+}
+
+#main {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: #282c34;
+  width: 100vw;
+}
+
+.nav {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+
+.numbers {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 2rem;
+  margin-right: 10px;
+  color: rgb(252, 91, 48);
+}
+
+.orange-chip {
+  background-color: rgb(252, 91, 48);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.overview-box > h2 {
+  font-family: 'Bungee Shade', cursive;
+}
+
+.overview-box {
+  font-family: 'Roboto', sans-serif;
+}
+
+.submission-count, .accepted {
+  padding: 15px;
+  width: 100px;
+}
+
+.submission-count {
+  color: rgb(252, 91, 48);
+  width: 35px;
+  text-align: center;
+}
+
+table th {
+  text-align: center;
+}
