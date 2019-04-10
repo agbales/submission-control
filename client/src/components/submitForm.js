@@ -1,7 +1,7 @@
 import React from 'react';
 import submittableExport from '../images/submittable-export.png'
 
-export default class PushcartPrizeRankings extends React.Component {
+export default class SubmitForm extends React.Component {
 
     constructor(props) {
         super(props)
@@ -14,8 +14,8 @@ export default class PushcartPrizeRankings extends React.Component {
         let uploadBox = {  marginBottom: '10px', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' }
 
         return(<div className="container">
-                <div class="row">
-                    <div class="col">
+                <div className="row">
+                    <div className="col">
                         <h1 className="numbers">1</h1> 
                         <p style={paragraphStyle}>Download your submissions data from Submittable.</p>
                         <img src={submittableExport} 
