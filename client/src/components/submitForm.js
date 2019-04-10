@@ -21,7 +21,7 @@ export default class SubmitForm extends React.Component {
                         <img src={submittableExport} 
                             style={imgStyle} />
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <h1 className="numbers">2</h1> 
                         <p style={paragraphStyle}>Upload & enjoy!</p>
                         <div style={uploadBox}>

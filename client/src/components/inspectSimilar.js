@@ -32,7 +32,11 @@ export default class PushcartPrizeRankings extends React.Component {
         }
 
         return(<div>
-                <Button onClick={ () => { this.props.toggleSimilar() }}>Back to All</Button>
+                <Button onClick={ () => { this.props.toggleSimilar() }}
+                        style={{marginTop: '20px', 
+                                backgroundColor: 'rgb(252, 91, 48)', 
+                                color: '#f5f5f5', 
+                                border: 'none'}}>Back to All</Button>
                 { this.props.similar ?
                     <div>
                         <h4>{this.props.similar[0].Title}</h4>
