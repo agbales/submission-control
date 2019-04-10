@@ -1,9 +1,7 @@
 import React from 'react';
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
-import '../App.css';
 
 export default class PushcartPrizeRankings extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {}

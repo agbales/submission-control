@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import submittableExport from '../images/submittable-export.png'
 
 export default class PushcartPrizeRankings extends React.Component {

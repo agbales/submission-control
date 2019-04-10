@@ -1,9 +1,9 @@
 import React from 'react';
 import AnnualStats from './annualStats'
 import '../App.css';
-import { Button, Chip } from 'react-materialize'
+import { Button } from 'react-materialize'
 import { GiAstronautHelmet, GiLunarModule, GiBeamSatellite } from 'react-icons/gi';
-import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
+import { FaCheckCircle } from 'react-icons/fa'
 export default class PushcartPrizeRankings extends React.Component {
 
     constructor(props) {

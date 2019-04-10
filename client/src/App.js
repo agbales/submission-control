@@ -88,7 +88,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <header className="App-header"> 
+        <div className="App-wrapper"> 
           <div className="nav">
             <a href="/"><img src={logo} className="logo" alt="Logo" /></a>
           </div>
@@ -114,7 +114,7 @@ class App extends Component {
                 </div>)
             }
           </div>
-        </header>
+        </div>
       </div>
     )
   }
