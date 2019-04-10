@@ -5,16 +5,7 @@ export default class PushcartPrizeRankings extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            showExample: true
-        }
-        this.toggleExample = this.toggleExample.bind(this)
-    }
-
-    toggleExample() {
-        this.setState(prevState => ({
-            showExample: !prevState.showExample
-        }))
+        this.state = {}
     }
 
     render() {
