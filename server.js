@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
+const path = require('path');
 const csv = require('csv-parser')
 const fs = require('fs')
 const bodyParser = require('body-parser')
@@ -9,7 +10,7 @@ const upload = multer({ dest: 'tmp/csv/' })
 
 app.use(bodyParser.json())
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file; 
@@ -73,3 +74,5 @@ let getUserStats = results => {
     stats.overallAcceptanceRate = parseFloat(acceptances / subs * 100).toFixed(2)
     return stats
 }
+
+app.listen(port, () => console.log(`Listening on port ${port}`))
