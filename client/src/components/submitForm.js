@@ -1,5 +1,6 @@
 import React from 'react';
 import submittableExport from '../images/submittable-export.png'
+import { FaCloudDownloadAlt, FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa'
 
 export default class SubmitForm extends React.Component {
 
@@ -12,17 +13,19 @@ export default class SubmitForm extends React.Component {
         let paragraphStyle = { textAlign: 'center', maxWidth: '280px', height: '60px', lineHeight: '60px', paddingBottom: '30px', margin: '0 auto' }
         let imgStyle = { maxWidth: '100%' }
         let uploadBox = {  marginBottom: '10px', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' }
+        let downloadIconStyle = { color: '#FC5B30' }
+        let uplaodIconStyle = { color: '#00AF79' }
 
         return(<div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1 className="numbers">1</h1> 
+                        <FaCloudDownloadAlt style={downloadIconStyle} size={70}/> 
                         <p style={paragraphStyle}>Download your submissions data from Submittable.</p>
                         <img src={submittableExport} 
                             style={imgStyle} />
                     </div>
                     <div className="col">
-                        <h1 className="numbers">2</h1> 
+                        <FaPlaneDeparture style={uplaodIconStyle} size={70} />
                         <p style={paragraphStyle}>Upload & enjoy!</p>
                         <div style={uploadBox}>
 
@@ -37,16 +40,17 @@ export default class SubmitForm extends React.Component {
                             <button className="btn btn-success" 
                                     type="submit"
                                     style={{marginTop: '20px', 
-                                            backgroundColor: 'rgb(252, 91, 48)', 
+                                            backgroundColor: '#00AF79', 
                                             color: '#f5f5f5', 
                                             border: 'none'}}>Upload</button>
                         </form>
                         </div>
                         <div style={uploadBox}>
                             <p>Don't have data, but want a peek?</p>
-                            <button className="btn btn-success" 
+                            <button className="btn" 
                                     style={{marginTop: '20px', 
-                                            border: 'none'}}>Test Flight</button>
+                                            border: 'none',
+                                            backgroundColor: '#FFC10E'}}>Test Flight</button>
                         </div>
                     </div>
                 </div>   
