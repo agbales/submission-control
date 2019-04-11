@@ -6,7 +6,7 @@ import { GiAstronautHelmet, GiLunarModule, GiBeamSatellite } from 'react-icons/g
 import { FaCheckCircle } from 'react-icons/fa'
 
 export default class PushcartPrizeRankings extends React.Component {
-    
+
     constructor(props) {
         super(props)
         this.state = {
@@ -39,7 +39,7 @@ export default class PushcartPrizeRankings extends React.Component {
                                 ? this.props.stats.totalSubmissions.toString()
                                 : <span>. . .</span> }
                         </h2>
-                        (sub)missions
+                        <span>(sub)missions</span>
                     </div>
                     <div className="overview-box" >
                         <GiLunarModule className="bigIcon" 
@@ -58,7 +58,7 @@ export default class PushcartPrizeRankings extends React.Component {
                                 ? this.props.stats.overallAcceptanceRate.toString()
                                 : <div /> }%
                         </h2>
-                        success rate
+                        <span>success rate</span>
                     </div>
                 </div>
                 

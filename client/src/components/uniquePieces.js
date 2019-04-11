@@ -40,7 +40,7 @@ export default class PushcartPrizeRankings extends React.Component {
         let data = this.props.data
 
         return(<div>
-                  <p>All Submisisons</p>
+                  <h2 style={{margin: '20px 0'}}>All Submisisons</h2>
                   <ul>
                       { this.uniquePieces(data).reverse().map( (entry, i) => {
                           return (<li key={i}>

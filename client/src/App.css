@@ -119,10 +119,11 @@ li {
 
 .overview-box > h2 {
   font-family: 'Bungee Shade', cursive;
+  margin-top: 15px;
 }
 
 .overview-box {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
 }
 
 .submission-count, .accepted {
