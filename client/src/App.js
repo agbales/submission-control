@@ -105,7 +105,7 @@ class App extends Component {
       <div className="App">
         <div className="App-wrapper"> 
           <div className="nav">
-            <a href="/"><img src={logo} className="logo" alt="Logo" /></a>
+            <a href="/"><img src={logo} className="logo" alt="Logo" style={{marginBottom: '40px'}} /></a>
           </div>
           <div id="main">
             { this.state.data.length === 0 

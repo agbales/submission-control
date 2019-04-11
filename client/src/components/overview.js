@@ -39,7 +39,7 @@ export default class PushcartPrizeRankings extends React.Component {
                                 ? this.props.stats.totalSubmissions.toString()
                                 : <span>. . .</span> }
                         </h2>
-                        <span>(sub)missions</span>
+                        <span>missions</span>
                     </div>
                     <div className="overview-box" >
                         <GiLunarModule className="bigIcon" 
