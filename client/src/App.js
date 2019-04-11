@@ -19,6 +19,7 @@ class App extends Component {
     }
     this.handleUpload = this.handleUpload.bind(this)
     this.handleFile = this.handleFile.bind(this)
+    this.getTestData = this.getTestData.bind(this)
     this.toggleSimilar = this.toggleSimilar.bind(this)
   }
 
@@ -40,6 +41,20 @@ class App extends Component {
       return submission.Title === title
     })
     this.setState({ similar: similar })
+  }
+
+  getTestData() {
+    axios({
+      url: './testData',
+      method: 'GET'
+    })
+    .then(res => {
+      let data = res.data;
+      this.setState({ data: data.csv, stats: data.stats })
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
   handleFile(e) {
@@ -95,6 +110,7 @@ class App extends Component {
             { this.state.data.length === 0 
               ? <SubmitForm handleFile = {this.handleFile} 
                             handleUpload = {this.handleUpload}
+                            getTestData = {this.getTestData}
                 />
               : (<div>
                   <Overview stats={this.state.stats} 

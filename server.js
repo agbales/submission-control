@@ -7,6 +7,7 @@ const fs = require('fs')
 const bodyParser = require('body-parser')
 const multer = require('multer');
 const upload = multer({ dest: 'tmp/csv/' })
+// const testData = require('./data/test-flight-data.csv')
 
 app.use(bodyParser.json())
 
@@ -26,6 +27,21 @@ app.post('/upload', upload.single('file'), (req, res) => {
             console.log('UPLOAD->', results)
             let stats = getUserStats(results)
             fs.unlinkSync(file.path); // remove temp file
+            res.status(200).send({ 
+                csv: results,
+                stats: stats
+            })
+        })
+})
+
+app.get('/testData', (req, res) =>{
+    const results = []
+    fs.createReadStream('./data/test-flight-data.csv')
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', () => {
+            console.log('UPLOAD->', results)
+            let stats = getUserStats(results)
             res.status(200).send({ 
                 csv: results,
                 stats: stats

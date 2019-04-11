@@ -50,7 +50,8 @@ export default class SubmitForm extends React.Component {
                             <button className="btn" 
                                     style={{marginTop: '20px', 
                                             border: 'none',
-                                            backgroundColor: '#FFC10E'}}>Test Flight</button>
+                                            backgroundColor: '#FFC10E'}}
+                                    onClick={this.props.getTestData}>Test Flight</button>
                         </div>
                     </div>
                 </div>   
