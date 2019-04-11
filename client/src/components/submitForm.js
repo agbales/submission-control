@@ -15,7 +15,7 @@ export default class SubmitForm extends React.Component {
         let uploadBox = {  marginBottom: '10px', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' }
         let downloadIconStyle = { color: '#FC5B30' }
         let uplaodIconStyle = { color: '#00AF79' }
-
+        let errAlert = { size: '1rem', color: '#eb4d4b'}
         return(<div className="container">
                 <div className="row">
                     <div className="col">
@@ -44,6 +44,9 @@ export default class SubmitForm extends React.Component {
                                             color: '#f5f5f5', 
                                             border: 'none'}}>Upload</button>
                         </form>
+                        { this.props.error && 
+                            <p style={errAlert}>{this.props.error}</p>
+                        }
                         </div>
                         <div style={uploadBox}>
                             <p>Don't have data, but want a peek?</p>

@@ -86,6 +86,7 @@ class App extends Component {
       this.setState({ data: data.csv, stats: data.stats })
     })
     .catch(error => {
+      this.setState({error: 'Upload a Submittable CSV only!'})
       console.log(error)
     })
   }
@@ -111,6 +112,7 @@ class App extends Component {
               ? <SubmitForm handleFile = {this.handleFile} 
                             handleUpload = {this.handleUpload}
                             getTestData = {this.getTestData}
+                            error={this.state.error}
                 />
               : (<div>
                   <Overview stats={this.state.stats} 
