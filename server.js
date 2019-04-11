@@ -51,10 +51,12 @@ app.get('/testData', (req, res) =>{
 
 let validateCSV = file => {    
     if (!file) {
+        fs.unlinkSync(file.path)
         throw new Error('Please upload a file')
     }
 
     if (!file.originalname.match(/\.(csv)$/)) {
+        fs.unlinkSync(file.path)
         throw new Error('Accepts CSV files only')
     }
 }
