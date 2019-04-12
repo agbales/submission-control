@@ -73,7 +73,7 @@ export default class SubmitForm extends React.Component {
                 </div>
                 <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px', marginBottom: '40px'}}>
                     <div className="col">
-                        <h1 style={{textAlign: 'center', margin: '40px 0'}}>Finding & Using Your Data</h1>
+                        <h1 style={{textAlign: 'center', margin: '40px 0'}}>Getting Your Data</h1>
                         <FaCloudDownloadAlt style={downloadIconStyle} size={125}/> 
                         <ol style={{maxWidth: '500px', margin: '0 auto', marginTop: '20px', backgroudColor: '#fff', borderRadius: '10px', paddingInlineStart: '0px'}}>
                             <li style={{textAlign: 'center'}}>1. Log into <a href="www.submittable.com" target="_blank">Submittable</a></li>
