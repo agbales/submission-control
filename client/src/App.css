@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto|Lato');
 
 body {
   font-family: 'Open Sans', sans-serif !important;
@@ -69,6 +69,10 @@ a {
   display: inline-block;
 }
 
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
 li {
   text-align: left;
   list-style: none;
@@ -117,13 +121,14 @@ li {
   transform: translateY(-5px);
 }
 
-.overview-box > h2 {
+.overview-box > h1 {
   font-family: 'Bungee Shade', cursive;
   margin-top: 15px;
+  font-size: 2rem;
 }
 
 .overview-box {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .submission-count, .accepted {

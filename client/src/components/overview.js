@@ -35,30 +35,30 @@ export default class PushcartPrizeRankings extends React.Component {
                 <div className="flex-container">
                     <div className="overview-box">
                         <GiAstronautHelmet className="bigIcon" style={submittableOrange} />
-                        <h2>{ this.props.stats.totalSubmissions 
+                        <h1>{ this.props.stats.totalSubmissions 
                                 ? this.props.stats.totalSubmissions.toString()
                                 : <span>. . .</span> }
-                        </h2>
-                        <span>missions</span>
+                        </h1>
+                        <span>Missions</span>
                     </div>
                     <div className="overview-box" >
                         <GiLunarModule className="bigIcon" 
                                        style={second} 
                                        onClick={ ()=> this.toggleAcceptedVisible() } />
-                        <h2 onClick={ ()=> this.toggleAcceptedVisible() } style={link}>
+                        <h1 onClick={ ()=> this.toggleAcceptedVisible() } style={link}>
                             { this.props.stats.totalAcceptances 
                                 ? this.props.stats.totalAcceptances.toString()
                                 : <div /> }
-                        </h2>
-                        <span onClick={ ()=> this.toggleAcceptedVisible() } style={link}>landings</span>
+                        </h1>
+                        <span onClick={ ()=> this.toggleAcceptedVisible() } style={link}>Landings</span>
                     </div>
                     <div className="overview-box">
                         <GiBeamSatellite className="bigIcon" style={third} />
-                        <h2>{ this.props.stats.overallAcceptanceRate 
+                        <h1>{ this.props.stats.overallAcceptanceRate 
                                 ? this.props.stats.overallAcceptanceRate.toString()
                                 : <div /> }%
-                        </h2>
-                        <span>success rate</span>
+                        </h1>
+                        <span>Success Rate</span>
                     </div>
                 </div>
                 
