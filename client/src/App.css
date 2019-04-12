@@ -52,7 +52,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
-  max-width: 950px;
   margin: 0 auto;
 }
 
