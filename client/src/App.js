@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
 import logo from './images/submission-control-stars-color.png'
-import Overview from './components/overview'
 import SubmitForm from './components/submitForm'
-import InspectSimilar from './components/inspectSimilar'
-import UniquePieces from './components/uniquePieces'
 import axios from 'axios'
+import MissionControl from './components/missionControl';
 
 class App extends Component {
   constructor(props) {
@@ -13,14 +11,11 @@ class App extends Component {
     this.state = {
       file: null,
       data: [],
-      inspectingSimilar: false,
-      similar: [],
       stats: {}
     }
     this.handleUpload = this.handleUpload.bind(this)
     this.handleFile = this.handleFile.bind(this)
     this.getTestData = this.getTestData.bind(this)
-    this.toggleSimilar = this.toggleSimilar.bind(this)
   }
 
   componentDidMount() {
@@ -34,13 +29,6 @@ class App extends Component {
       throw Error(body.message) 
     }
     return body
-  }
-
-  getSimilar(title) {
-    let similar = this.state.data.filter( submission => {
-      return submission.Title === title
-    })
-    this.setState({ similar: similar })
   }
 
   getTestData() {
@@ -91,15 +79,6 @@ class App extends Component {
     })
   }
 
-  toggleSimilar(title) {
-    this.setState(prevState => ({
-      inspectingSimilar: !prevState.inspectingSimilar
-    }))
-    if (title) {
-      this.getSimilar(title)
-    }
-  }
-
   render() {
     return (
       <div className="App">
@@ -114,21 +93,9 @@ class App extends Component {
                             getTestData = {this.getTestData}
                             error={this.state.error}
                 />
-              : (<div>
-                  <Overview stats={this.state.stats} 
-                            acceptances={this.state.stats.acceptances}
-                            inspectingSimilar={this.state.inspectingSimilar} 
-                            toggleSimilar={this.state.toggleSimilar} 
-                  />
-                  { !this.state.inspectingSimilar 
-                      ? <UniquePieces data={this.state.data}
-                                      toggleSimilar={this.toggleSimilar}                                                
-                        />
-                      : <InspectSimilar toggleSimilar={this.toggleSimilar}
-                                        similar={this.state.similar}
-                        />
-                  }
-                </div>)
+              : (<MissionControl acceptances={this.state.stats.acceptances}
+                                 data={this.state.data}
+                                 stats={this.state.stats} />)
             }
           </div>
         </div>

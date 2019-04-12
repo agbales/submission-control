@@ -3,7 +3,7 @@ import { Button } from 'react-materialize'
 import { FaCheckCircle, FaRegCircle, FaTimesCircle, FaStumbleuponCircle } from 'react-icons/fa'
 import '../App.css';
 
-export default class PushcartPrizeRankings extends React.Component {
+export default class InspectSimilar extends React.Component {
 
     constructor(props) {
         super(props)
@@ -47,6 +47,7 @@ export default class PushcartPrizeRankings extends React.Component {
                                 let icon = this.pickSubmissionIcon(entry)
                                 let dateStyle = { color: 'rgb(164, 164, 164)'}
                                 let priceStyle = { color: '#00AF79' }
+                                console.log('-->', entry)
                                 return (<li key={i}>
                                             <span className="accepted">{ icon }</span>
                                             <span><a href={entry['Organization Website']} target="_blank" rel="noopener noreferrer">{entry['Organization']}</a></span>
