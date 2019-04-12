@@ -37,7 +37,8 @@ class App extends Component {
       method: 'GET'
     })
     .then(res => {
-      let data = res.data;
+      let data = res.data
+      this.scrollToTop()
       this.setState({ data: data.csv, stats: data.stats })
     })
     .catch(error => {
@@ -70,7 +71,8 @@ class App extends Component {
       }
     })
     .then(res => {
-      let data = res.data;
+      let data = res.data
+      this.scrollToTop()
       this.setState({ data: data.csv, stats: data.stats })
     })
     .catch(error => {
@@ -84,6 +86,8 @@ class App extends Component {
       this.setState({error: err})
     })
   }
+
+  scrollToTop = () => { window.scrollTo(0, 0) }
 
   render() {
     return (
@@ -100,7 +104,8 @@ class App extends Component {
               />)
             : (<MissionControl acceptances={this.state.stats.acceptances}
                                 data={this.state.data}
-                                stats={this.state.stats} />)
+                                stats={this.state.stats} 
+                                scrollToTop={this.scrollToTop} />)
           }
         </div>
       </div>

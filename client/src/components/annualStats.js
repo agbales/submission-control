@@ -23,7 +23,7 @@ export default class AnnualStats extends React.Component {
     }
     
     yearFormatter(cell) {
-        return `<span class="numbers">${cell}</span>`
+        return `<span class="">${cell}</span>`
     }
 
     render() {

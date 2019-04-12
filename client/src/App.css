@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto|Lato');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Open+Sans|Roboto|Lato|Playfair+Display');
 
 body {
   font-family: 'Open Sans', sans-serif !important;
@@ -127,6 +127,14 @@ li {
 
 .overview-box {
   font-family: 'Lato', sans-serif;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.react-bs-table .table-bordered>thead>tr:first-child>th {
+  font-family: 'open sans', sans-serif;
 }
 
 .spinning-bh {

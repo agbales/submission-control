@@ -26,6 +26,7 @@ export default class PushcartPrizeRankings extends React.Component {
     render() {
         let submittableOrange = { color: '#FC5B30' }
         let second = { color: '#00AF79', cursor: 'pointer'}
+        let secondNum = { fontFamily: "'Bungee Shade', cursive", margin: '5px 15px', fontSize: '4rem', color: '#00AF79'}
         let third = { color: '#FFC10E' }
         let link = { cursor: 'pointer'}
 
@@ -35,37 +36,42 @@ export default class PushcartPrizeRankings extends React.Component {
                 <div className="flex-container">
                     <div className="overview-box">
                         <GiAstronautHelmet className="bigIcon" style={submittableOrange} />
-                        <h1>{ this.props.stats.totalSubmissions 
-                                ? this.props.stats.totalSubmissions.toString()
-                                : <span>. . .</span> }
-                        </h1>
-                        <span>Missions</span>
+                        <div>
+                            <h1 className="inline-block playfair" style={{fontSize: '6rem', marginRight: '10px'}}>
+                                { this.props.stats.totalSubmissions &&
+                                    this.props.stats.totalSubmissions.toString()
+                                }
+                            </h1>
+                            <h1 className="inline-block" style={{fontSize: '3rem', fontFamily: 'open sans'}}>  missions</h1>
+                            <span className="inline-block"> </span>
+                        </div>
                     </div>
                     <div className="overview-box" >
                         <GiLunarModule className="bigIcon" 
                                        style={second} 
                                        onClick={ ()=> this.toggleAcceptedVisible() } />
-                        <h1 onClick={ ()=> this.toggleAcceptedVisible() } style={link}>
-                            { this.props.stats.totalAcceptances 
-                                ? this.props.stats.totalAcceptances.toString()
-                                : <div /> }
-                        </h1>
-                        <span onClick={ ()=> this.toggleAcceptedVisible() } style={link}>Landings</span>
+                        <div>
+                            <h1 onClick={ ()=> this.toggleAcceptedVisible() } style={secondNum} className="inline-block">
+                                { this.props.stats.totalAcceptances &&
+                                    this.props.stats.totalAcceptances.toString()
+                                } 
+                            </h1>
+                            <h2 style={{display: 'inline-block', marignRight: '10px'}}>  landings</h2>
+                        </div>
+                        {/* <span onClick={ ()=> this.toggleAcceptedVisible() } style={link}>landings</span> */}
                     </div>
                     <div className="overview-box">
                         <GiBeamSatellite className="bigIcon" style={third} />
-                        <h1>{ this.props.stats.overallAcceptanceRate 
-                                ? this.props.stats.overallAcceptanceRate.toString()
-                                : <div /> }%
+                        <h1 style={{fontSize: '3rem'}}>{ this.props.stats.overallAcceptanceRate &&
+                                this.props.stats.overallAcceptanceRate.toString()
+                            }%
                         </h1>
-                        <span>Success Rate</span>
+                        <span style={{fontFamily: 'roboto'}}>success rate</span>
                     </div>
                 </div>
                 
                 <div className="container">
-                    { !this.props.inspectingSimilar &&
-                        <AnnualStats annualStats={this.props.stats.years}/>
-                    }
+                    <AnnualStats annualStats={this.props.stats.years}/>
                 </div>
 
                 { this.state.showAcceptances 

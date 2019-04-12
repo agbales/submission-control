@@ -18,6 +18,7 @@ export default class MissionControl extends React.Component {
         let similar = this.props.data.filter( submission => {
           return submission.Title === title
         })
+        this.props.scrollToTop()
         this.setState({ similar: similar })
     }
 
@@ -32,11 +33,13 @@ export default class MissionControl extends React.Component {
 
     render() {
         return(<div>
-                <Overview stats={this.props.stats} 
-                          acceptances={this.props.stats.acceptances}
-                          inspectingSimilar={this.state.inspectingSimilar} 
-                          toggleSimilar={this.props.toggleSimilar} 
-                />
+                { !this.state.inspectingSimilar &&
+                    <Overview stats={this.props.stats} 
+                            acceptances={this.props.stats.acceptances}
+                            inspectingSimilar={this.state.inspectingSimilar} 
+                            toggleSimilar={this.props.toggleSimilar} 
+                    />
+                }
                 { this.state.inspectingSimilar 
                     ? <InspectSimilar toggleSimilar={this.toggleSimilar}
                                       similar={this.state.similar} />

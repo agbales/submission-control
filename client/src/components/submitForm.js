@@ -20,7 +20,9 @@ export default class SubmitForm extends React.Component {
         let uplaodIconStyle = { color: '#00AF79' }
         let errAlert = { size: '1rem', color: '#eb4d4b'}
         let center = {width: '100%', position: 'absolute',top: '50%', left: '50%', transform: 'translate(-50%,-50%)'}
-    
+        let testFlightButton = {marginTop: '20px', border: 'none', backgroundColor: '#FFC10E'}
+        let uploadButton = {marginTop: '20px', backgroundColor: '#00AF79', color: '#f5f5f5', border: 'none'}
+        
         return(<div className="container">  
                 <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px'}}>
                     <div className="col" style={uploadBox}>
@@ -37,10 +39,7 @@ export default class SubmitForm extends React.Component {
                             </div>
                             <button className="btn btn-success" 
                                     type="submit"
-                                    style={{marginTop: '20px', 
-                                            backgroundColor: '#00AF79', 
-                                            color: '#f5f5f5', 
-                                            border: 'none'}}>Upload</button>
+                                    style={uploadButton}>Upload</button>
                         </form>
                         { this.props.error && 
                             <p style={errAlert}>{this.props.error}</p>
@@ -52,9 +51,7 @@ export default class SubmitForm extends React.Component {
                             <GiUrsaMajor size={250} style={{color: '#FFC10E'}} />
                             <p style={paragraphStyle}>Do data? No Problem. Take a test flight.</p>
                             <button className="btn" 
-                                    style={{marginTop: '20px', 
-                                            border: 'none',
-                                            backgroundColor: '#FFC10E'}}
+                                    style={testFlightButton}
                                     onClick={this.props.getTestData}>Takeoff</button>
                         </div>
                     </div>

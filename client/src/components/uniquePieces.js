@@ -40,10 +40,12 @@ export default class PushcartPrizeRankings extends React.Component {
     render() {
         let data = this.props.data
         let spacer = { marginTop: '50px'}
+        let playfiar = { fontFamily: "'Playfair Display', serif" }
 
         return(<div style={spacer}>
                   <GiBlackHoleBolas size={200} className="spinning-bh" />
-                  <h2 style={{margin: '20px 0'}}>All Submisisons</h2>
+                  <h1 style={playfiar}>All Missions</h1>
+                  <h4 style={{margin: '20px 0'}}>click to review logs</h4>
                   <ul>
                       { this.uniquePieces(data).reverse().map( (entry, i) => {
                           return (<li key={i}>
