@@ -2,6 +2,7 @@ import React from 'react';
 import submittableExport from '../images/submittable-export.png'
 import { FaCloudDownloadAlt, FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa'
 import { GiSpaceShuttle, GiUrsaMajor } from 'react-icons/gi'
+import { IoMdStats, IoMdCheckmarkCircle, IoMdFiling } from 'react-icons/io'
 import screenshot from '../images/Submission-Control-Screenshot.png'
 
 export default class SubmitForm extends React.Component {
@@ -12,7 +13,7 @@ export default class SubmitForm extends React.Component {
     }
 
     render() {
-        let paragraphStyle = { textAlign: 'center', maxWidth: '300px', height: '120px', paddingTop: '30px',paddingBottom: '30px', margin: '0 auto' }
+        let paragraphStyle = { textAlign: 'center', maxWidth: '500px', height: '120px', paddingTop: '30px',paddingBottom: '30px', margin: '0 auto' }
         let imgStyle = { maxWidth: '100%' }
         let uploadBox = { textAlign: 'center', margin: '15px', padding: '20px', borderRadius: '10px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)', backgroundColor: '#fff' }
         let downloadIconStyle = { color: '#FC5B30' }
@@ -58,22 +59,26 @@ export default class SubmitForm extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{backgroundColor: '#fff', borderRadius: '10px'}}>
+                <div className="row" style={{margin: '60px 0'}}>
                     <div className="col">
                         <img src={screenshot} className="img-rounded img-responsive" style={{width: '100%'}} /> 
                     </div>
-                    <div className="col">
+                    <div className="col" style={{backgroundColor: '#FC5B30', borderRadius: '10px'}}>
                         <ul style={center}>
-                            <li style={{textAlign: 'center', color: '#1a1a1a'}} className="overview-box">Submission Stats</li>
-                            <li style={{textAlign: 'center', color: '#1a1a1a'}} className="overview-box">Flight Logs</li>
-                            <li style={{textAlign: 'center', color: '#1a1a1a'}} className="overview-box">Annual Rankings</li>
+                            <li style={{textAlign: 'center', color: '#fff'}} className="overview-box"><h2>Submission Stats  <IoMdStats /></h2></li>
+                            <li style={{textAlign: 'center', color: '#fff'}} className="overview-box"><h2>Flight Logs  <IoMdFiling /></h2></li>
+                            <li style={{textAlign: 'center', color: '#fff'}} className="overview-box"><h2>Annual Rankings  <IoMdCheckmarkCircle /></h2></li>
                         </ul>
                     </div>
                 </div>
-                <div className="row" style={{backgroundColor: '#fff', borderRadius: '10px'}}>
+                <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px'}}>
                     <div className="col">
-                        <FaCloudDownloadAlt style={downloadIconStyle} size={70}/> 
-                        <p style={paragraphStyle}>How to Download Your Data</p>
+                        <FaCloudDownloadAlt style={downloadIconStyle} size={125}/> 
+                        <p style={paragraphStyle}>Need Help Finding Your Data?</p>
+                        <ol style={{maxWidth: '500px', margin: '0 auto'}}>
+                            <li>1. Log into <a href="www.submittable.com" target="_blank">Submittable</a></li>
+                            <li>2. Click the export button, as seen below</li>
+                        </ol>
                         <img src={submittableExport} 
                             style={imgStyle} />
                     </div>
