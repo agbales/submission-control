@@ -44,7 +44,7 @@ export default class PushcartPrizeRankings extends React.Component {
         return(<div style={spacer}>
                   <GiBlackHoleBolas size={200} className="spinning-bh" />
                   <h1 className="playfair">All Missions</h1>
-                  <h4 style={{margin: '20px 0'}}>click to review logs</h4>
+                  <h4 style={{margin: '20px 0'}}>Review the Logs</h4>
                   <ul>
                       { this.uniquePieces(data).reverse().map( (entry, i) => {
                           return (<li key={i}>

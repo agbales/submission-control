@@ -2,6 +2,7 @@ import React from 'react'
 import Overview from './overview'
 import InspectSimilar from './inspectSimilar'
 import UniquePieces from './uniquePieces'
+import Footer from './footer'
 
 export default class MissionControl extends React.Component {
 
@@ -43,8 +44,11 @@ export default class MissionControl extends React.Component {
                 { this.state.inspectingSimilar 
                     ? <InspectSimilar toggleSimilar={this.toggleSimilar}
                                       similar={this.state.similar} />
-                    : <UniquePieces data={this.props.data}
-                                    toggleSimilar={this.toggleSimilar} />
+                    : (<div>
+                            <UniquePieces data={this.props.data}
+                                        toggleSimilar={this.toggleSimilar} />
+                            <Footer />
+                        </div>)
                 }
             </div>)
     }

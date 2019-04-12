@@ -30,6 +30,7 @@ export default class PushcartPrizeRankings extends React.Component {
         let link = { cursor: 'pointer'}
         let threeRem = { fontSize: '3rem' }
         let roboto = { fontFamily: 'roboto' }
+        let uploadButton = { marginTop: '20px', backgroundColor: '#00AF79', color: '#f5f5f5', border: 'none' }
 
         return(
             <div>
@@ -47,8 +48,7 @@ export default class PushcartPrizeRankings extends React.Component {
                             <h1 onClick={ ()=> this.toggleAcceptedVisible() } 
                                 style={threeRem}>{ this.props.stats.totalAcceptances.toString() }
                             </h1>
-                            <span style={roboto}>landings</span>
-                            {/* <span onClick={ ()=> this.toggleAcceptedVisible() } style={link}>landings</span> */}
+                            <span style={roboto} onClick={ ()=> this.toggleAcceptedVisible() }>landings</span>
                         </div>
                         <div className="overview-box">
                             <GiBeamSatellite className="bigIcon" style={third} />
@@ -57,13 +57,9 @@ export default class PushcartPrizeRankings extends React.Component {
                         </div>
                     </div>
                     
-                    <div className="container">
-                        <AnnualStats annualStats={this.props.stats.years}/>
-                    </div>
-
                     { this.state.showAcceptances 
                         ? (<div> 
-                                <Button onClick={ ()=> this.toggleAcceptedVisible() }>Close</Button>
+                                <Button style={uploadButton} onClick={ ()=> this.toggleAcceptedVisible() }>Close</Button>
                                 <ul>
                                     { this.props.acceptances.map( (entry, i) => {
                                         return(<li key={i}>
@@ -75,6 +71,11 @@ export default class PushcartPrizeRankings extends React.Component {
                             </div>)
                         : <div></div> 
                     }
+
+                    <div className="container">
+                        <AnnualStats annualStats={this.props.stats.years}/>
+                    </div>
+
                 </header>
             </div>
         )

@@ -1,9 +1,10 @@
 import React from 'react';
 import submittableExport from '../images/submittable-export.png'
-import { FaCloudDownloadAlt, FaPlaneArrival, FaPlaneDeparture, FaHeart } from 'react-icons/fa'
+import { FaCloudDownloadAlt } from 'react-icons/fa'
 import { GiSpaceShuttle, GiUrsaMajor } from 'react-icons/gi'
 import { IoMdStats, IoMdCheckmarkCircle, IoMdFiling } from 'react-icons/io'
 import screenshot from '../images/Submission-Control-Screenshot.png'
+import Footer from './footer'
 
 export default class SubmitForm extends React.Component {
 
@@ -70,7 +71,7 @@ export default class SubmitForm extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px'}}>
+                <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px', marginBottom: '40px'}}>
                     <div className="col">
                         <h1 style={{textAlign: 'center', margin: '40px 0'}}>Finding & Using Your Data</h1>
                         <FaCloudDownloadAlt style={downloadIconStyle} size={125}/> 
@@ -87,10 +88,10 @@ export default class SubmitForm extends React.Component {
                         {/* <FaCloudDownloadAlt style={downloadIconStyle} size={125}/>  */}
                         <p style={{ color: '#1a1a1a', maxWidth: '600px', margin: '0 auto', padding: '20px', textAlign: 'justified'}}>
                             <span style={{color: '#FC5B30'}}>*</span> We don't store or use your data. We simply clean it up and send it back to you for a one-time display. Simple as that.
-                            <FaHeart style={{margin: '0 5px', color: '#FC5B30'}} />
                         </p>
                     </div>
                 </div>
+                <Footer />
             </div>)
     }
 }

@@ -63,6 +63,11 @@ a {
   font-size: 30px;
 }
 
+#footer {
+  margin-top: 40px;
+  padding: 10px 0;
+}
+
 .inline-block {
   display: inline-block;
 }
