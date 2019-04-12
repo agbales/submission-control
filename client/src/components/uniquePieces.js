@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
+import { GiBlackHoleBolas } from 'react-icons/gi'
 
 export default class PushcartPrizeRankings extends React.Component {
     constructor(props) {
@@ -38,8 +39,10 @@ export default class PushcartPrizeRankings extends React.Component {
 
     render() {
         let data = this.props.data
+        let spacer = { marginTop: '50px'}
 
-        return(<div>
+        return(<div style={spacer}>
+                  <GiBlackHoleBolas size={200} className="spinning-bh" />
                   <h2 style={{margin: '20px 0'}}>All Submisisons</h2>
                   <ul>
                       { this.uniquePieces(data).reverse().map( (entry, i) => {

@@ -129,6 +129,12 @@ li {
   font-family: 'Lato', sans-serif;
 }
 
+.spinning-bh {
+  color: #FFC10E;
+  animation: spin 10s linear 0s infinite reverse;
+  margin-bottom: 20px;
+}
+
 .submission-count, .accepted {
   padding: 15px;
   width: 100px;
@@ -142,4 +148,9 @@ li {
 
 table th {
   text-align: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }

@@ -31,20 +31,17 @@ export default class MissionControl extends React.Component {
     }
 
     render() {
-
         return(<div>
                 <Overview stats={this.props.stats} 
                           acceptances={this.props.stats.acceptances}
                           inspectingSimilar={this.state.inspectingSimilar} 
                           toggleSimilar={this.props.toggleSimilar} 
                 />
-                { !this.state.inspectingSimilar 
-                    ? <UniquePieces data={this.props.data}
-                                    toggleSimilar={this.toggleSimilar} 
-                        />
-                    : <InspectSimilar toggleSimilar={this.toggleSimilar}
-                                      similar={this.state.similar}
-                        />
+                { this.state.inspectingSimilar 
+                    ? <InspectSimilar toggleSimilar={this.toggleSimilar}
+                                      similar={this.state.similar} />
+                    : <UniquePieces data={this.props.data}
+                                    toggleSimilar={this.toggleSimilar} />
                 }
             </div>)
     }
