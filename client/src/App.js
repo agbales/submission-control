@@ -74,30 +74,34 @@ class App extends Component {
       this.setState({ data: data.csv, stats: data.stats })
     })
     .catch(error => {
-      this.setState({error: 'Upload a Submittable CSV only!'})
-      console.log(error)
+      let err = error.toString()
+      if (error.toString().includes('500')) {
+        err = "Uplod your Submittable export :)"
+      }
+      if (error.toString().includes('400')) {
+        err = "Can't connect right now :("
+      }
+      this.setState({error: err})
     })
   }
 
   render() {
     return (
-      <div className="App">
-        <div className="App-wrapper"> 
-          <div className="nav">
-            <a href="/"><img src={logo} className="logo" alt="Logo" style={{marginBottom: '40px'}} /></a>
-          </div>
-          <div id="main">
-            { this.state.data.length === 0 
-              ? <SubmitForm handleFile = {this.handleFile} 
-                            handleUpload = {this.handleUpload}
-                            getTestData = {this.getTestData}
-                            error={this.state.error}
-                />
-              : (<MissionControl acceptances={this.state.stats.acceptances}
-                                 data={this.state.data}
-                                 stats={this.state.stats} />)
-            }
-          </div>
+      <div className="App"> 
+        <div className="nav">
+          <a href="/"><img src={logo} className="logo" alt="Logo" /></a>
+        </div>
+        <div id="main">
+          { this.state.data.length === 0 
+            ? <SubmitForm handleFile = {this.handleFile} 
+                          handleUpload = {this.handleUpload}
+                          getTestData = {this.getTestData}
+                          error={this.state.error}
+              />
+            : (<MissionControl acceptances={this.state.stats.acceptances}
+                                data={this.state.data}
+                                stats={this.state.stats} />)
+          }
         </div>
       </div>
     )
