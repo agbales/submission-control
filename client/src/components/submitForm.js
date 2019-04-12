@@ -1,6 +1,6 @@
 import React from 'react';
 import submittableExport from '../images/submittable-export.png'
-import { FaCloudDownloadAlt, FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa'
+import { FaCloudDownloadAlt, FaPlaneArrival, FaPlaneDeparture, FaHeart } from 'react-icons/fa'
 import { GiSpaceShuttle, GiUrsaMajor } from 'react-icons/gi'
 import { IoMdStats, IoMdCheckmarkCircle, IoMdFiling } from 'react-icons/io'
 import screenshot from '../images/Submission-Control-Screenshot.png'
@@ -31,7 +31,7 @@ export default class SubmitForm extends React.Component {
                         <div>
                         <form onSubmit={this.props.handleUpload}>
                             <GiSpaceShuttle style={uplaodIconStyle} size={250} />
-                            <p style={paragraphStyle}>Upload your data & enjoy!</p>
+                            <p style={paragraphStyle}>Upload Your Data & Explore!<span style={{color: '#FC5B30'}}>*</span></p>
                             <div className="form-group" style={{display: 'inline-block'}}>
                             <input className="form-control" 
                                     onChange={this.props.handleFile}
@@ -72,14 +72,23 @@ export default class SubmitForm extends React.Component {
                 </div>
                 <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px'}}>
                     <div className="col">
+                        <h1 style={{textAlign: 'center', margin: '40px 0'}}>Finding & Using Your Data</h1>
                         <FaCloudDownloadAlt style={downloadIconStyle} size={125}/> 
-                        <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Need Help Finding Your Data?</h2>
                         <ol style={{maxWidth: '500px', margin: '0 auto', marginTop: '20px', backgroudColor: '#fff', borderRadius: '10px', paddingInlineStart: '0px'}}>
                             <li style={{textAlign: 'center'}}>1. Log into <a href="www.submittable.com" target="_blank">Submittable</a></li>
                             <li style={{textAlign: 'center'}}>2. Click the export button, as seen below</li>
                         </ol>
                         <img src={submittableExport} 
                             style={imgStyle} />
+                    </div>
+                </div>
+                <div className="row" style={{backgroundColor: '#FFC10E', borderRadius: '10px'}}>
+                    <div className="col">
+                        {/* <FaCloudDownloadAlt style={downloadIconStyle} size={125}/>  */}
+                        <p style={{ color: '#1a1a1a', maxWidth: '600px', margin: '0 auto', padding: '20px', textAlign: 'justified'}}>
+                            <span style={{color: '#FC5B30'}}>*</span> We don't store or use your data. We simply clean it up and send it back to you for a one-time display. Simple as that.
+                            <FaHeart style={{margin: '0 5px', color: '#FC5B30'}} />
+                        </p>
                     </div>
                 </div>
             </div>)
