@@ -93,11 +93,11 @@ class App extends Component {
         </div>
         <div id="main">
           { this.state.data.length === 0 
-            ? <SubmitForm handleFile = {this.handleFile} 
-                          handleUpload = {this.handleUpload}
-                          getTestData = {this.getTestData}
-                          error={this.state.error}
-              />
+            ? (<SubmitForm handleFile = {this.handleFile} 
+                           handleUpload = {this.handleUpload}
+                           getTestData = {this.getTestData}
+                           error={this.state.error}
+              />)
             : (<MissionControl acceptances={this.state.stats.acceptances}
                                 data={this.state.data}
                                 stats={this.state.stats} />)
