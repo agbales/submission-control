@@ -15,7 +15,7 @@ export default class SubmitForm extends React.Component {
 
     render() {
         let paragraphStyle = { textAlign: 'center', maxWidth: '500px', height: '120px', paddingTop: '30px',paddingBottom: '30px', margin: '0 auto' }
-        let imgStyle = { maxWidth: '100%' }
+        let imgStyle = { maxWidth: '70%' }
         let uploadBox = { textAlign: 'center', margin: '15px', padding: '20px', borderRadius: '10px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)', backgroundColor: '#fff' }
         let downloadIconStyle = { color: '#FC5B30' }
         let uplaodIconStyle = { color: '#00AF79' }
