@@ -5,6 +5,8 @@ import { GiSpaceShuttle, GiUrsaMajor } from 'react-icons/gi'
 import { IoMdStats, IoMdCheckmarkCircle, IoMdFiling } from 'react-icons/io'
 import screenshot from '../images/Submission-Control-Screenshot.png'
 import Footer from './footer'
+import ShuttleIcon from '../icons/shuttleIcon'
+import UrsaMajorIcon from '../icons/ursaMajorIcon'
 
 export default class SubmitForm extends React.Component {
 
@@ -18,7 +20,7 @@ export default class SubmitForm extends React.Component {
         let imgStyle = { maxWidth: '70%' }
         let uploadBox = { textAlign: 'center', margin: '15px', padding: '20px', borderRadius: '10px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)', backgroundColor: '#fff' }
         let downloadIconStyle = { color: '#FC5B30' }
-        let uplaodIconStyle = { color: '#00AF79' }
+        let shuttleStyle = { color: '#00AF79' }
         let errAlert = { size: '1rem', color: '#eb4d4b' }
         let center = { width: '100%', position: 'absolute',top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }
         let testFlightButton = { marginTop: '20px', border: 'none', backgroundColor: '#FFC10E' }
@@ -31,7 +33,7 @@ export default class SubmitForm extends React.Component {
                     <div className="col" style={uploadBox}>
                         <div>
                         <form onSubmit={this.props.handleUpload}>
-                            <GiSpaceShuttle style={uplaodIconStyle} size={250} />
+                            <ShuttleIcon style={shuttleStyle} size={250} />
                             <p style={paragraphStyle}>Upload Your Data & Explore!<span style={{color: '#FC5B30'}}>*</span></p>
                             <div className="form-group" style={{display: 'inline-block'}}>
                             <input className="form-control" 
@@ -51,7 +53,7 @@ export default class SubmitForm extends React.Component {
                     </div>
                     <div className="column" style={{textAlign: 'center', width: '50%', margin: '10px', padding: '20px', borderRadius: '10px', boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)', backgroundColor: '#fff'}}>
                         <div>
-                            <GiUrsaMajor size={250} style={{color: '#FFC10E'}} />
+                            <UrsaMajorIcon size={250} style={{color: '#FFC10E'}} />
                             <p style={paragraphStyle}>Do data? No Problem. Take a test flight.</p>
                             <button className="btn" 
                                     style={testFlightButton}
@@ -74,7 +76,7 @@ export default class SubmitForm extends React.Component {
                 <div className="row" style={{backgroundColor: '#f9f9f9', borderRadius: '10px', marginBottom: '40px'}}>
                     <div className="col">
                         <h1 style={{textAlign: 'center', margin: '40px 0'}}>Getting Your Data</h1>
-                        <FaCloudDownloadAlt style={downloadIconStyle} size={125}/> 
+                        <FaCloudDownloadAlt style={downloadIconStyle} size={125} className="float"/> 
                         <ol style={{maxWidth: '500px', margin: '0 auto', marginTop: '20px', backgroudColor: '#fff', borderRadius: '10px', paddingInlineStart: '0px'}}>
                             <li style={{textAlign: 'center'}}>1. Log into <a href="www.submittable.com" target="_blank">Submittable</a></li>
                             <li style={{textAlign: 'center'}}>2. Click the export button, as seen below</li>
