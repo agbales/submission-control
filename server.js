@@ -15,16 +15,17 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file; 
-    const meta = req.body;
 
     validateCSV(file)
 
     const results = []
     fs.createReadStream(file.path)
         .pipe(csv())
-        .on('data', (data) => results.push(data))
+        .on('data', (data) => {
+            if (!isValidRow(data)) res.send(415)
+            results.push(data)
+        })
         .on('end', () => {
-            console.log('UPLOAD->', results)
             let stats = getUserStats(results)
             fs.unlinkSync(file.path); // remove temp file
             res.status(200).send({ 
@@ -40,7 +41,6 @@ app.get('/testData', (req, res) =>{
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
-            console.log('UPLOAD->', results)
             let stats = getUserStats(results)
             res.status(200).send({ 
                 csv: results,
@@ -59,6 +59,23 @@ let validateCSV = file => {
         fs.unlinkSync(file.path)
         throw new Error('Accepts CSV files only')
     }
+}
+
+let isValidRow = row => {
+    let keys = Object.keys(row)
+    if (keys.length !== 8) return false
+    if (keys[0] !== 'Title' ||
+        keys[1] !== 'Submission Date' ||
+        keys[2] !== 'Organization' ||
+        keys[3] !== 'Form' ||
+        keys[4] !== 'Status' ||
+        keys[5] !== 'Organization Website' ||
+        keys[6] !== 'Fee Paid' ||
+        keys[7] !== 'Fee Currency') { 
+        console.log('ERR in row', row)
+        return false
+    }
+    return true
 }
 
 let getUserStats = results => {

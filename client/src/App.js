@@ -77,10 +77,10 @@ class App extends Component {
     })
     .catch(error => {
       let err = error.toString()
-      if (error.toString().includes('500')) {
-        err = "Upload your Submittable export :)"
+      if (err.includes('500') || err.includes('415')) {
+        err = "Upload Submittable exports only :)"
       }
-      if (error.toString().includes('400')) {
+      if (err.includes('400')) {
         err = "Can't connect right now :("
       }
       this.setState({error: err})
